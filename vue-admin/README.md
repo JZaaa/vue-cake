@@ -7,9 +7,6 @@
 ### 使用方法
 
 ````
-# clone 项目
-git clone 
-
 # 安装依赖
 npm install
 

@@ -6,9 +6,6 @@
 
 ### 安装
 ````
-# clone project
-git clone 
-
 # 安装依赖
 composer install
 ````
