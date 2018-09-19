@@ -1,0 +1,85 @@
+.tag {
+  display: inline-block;
+  /*line-height: 14px;*/
+  padding: 1px 5px;
+  border-radius: 2px;
+  position: relative;
+  font-size: @font-size-base;
+  background: @color-white;
+  color: @color-default!important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5;
+  }
+
+  &::after {
+    border-color: currentColor;
+    border-radius: 4px;
+  }
+
+  &.tag-large {
+    font-size: .7rem;
+    padding: 3px 5px;
+  }
+
+  &.tag-mark {
+    border-radius: 0 8px 8px 0;
+
+    &::after {
+      border-radius: 0 16px 16px 0;
+    }
+  }
+
+  &.tag-success {
+    .color-variant(@color-success);
+
+    &.tag-plain {
+      color: @color-success!important;
+    }
+  }
+
+
+  &.tag-danger {
+    .color-variant(@color-danger);
+
+    &.tag-plain {
+      color: @color-danger!important;
+    }
+  }
+
+  &.tag-primary {
+    .color-variant(@color-primary);
+
+    &.tag-plain {
+      color: @color-primary!important;
+    }
+  }
+
+  &.tag-brown {
+    .color-variant(@color-brown);
+
+    &.tag-plain {
+      color: @color-brown!important;
+    }
+  }
+
+  &.tag-plain {
+    background: @color-white!important;
+    color: @color-white;
+  }
+
+
+}
+

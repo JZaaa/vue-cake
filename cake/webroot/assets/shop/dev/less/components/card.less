@@ -1,0 +1,243 @@
+// 商品布局，添加选择框
+.card-goods-item {
+  position: relative;
+  //background-color: #fafafa;
+
+  &.check-box {
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+
+    &.mui-checkbox.mui-left {
+      input[type=checkbox], .mui-radio.mui-left input[type=radio] {
+        top: 50%;
+        left: 10px;
+        z-index: 1;
+        position: absolute;
+        margin-top: -15px;
+      }
+    }
+  }
+
+  .card-checkbox-label {
+    width: 100%;
+    padding: 0 10px 0 15px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 20px;
+  }
+
+  &::before {
+    height: 0;
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 15px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+  }
+
+  &:last-child:after, &:last-child:before {
+    height: 0;
+  }
+}
+
+// 横向卡片布局
+.rn-card {
+  color: #333;
+  height: 100px;
+  font-size: @font-size-h4;
+  background: @color-canvas;
+  position: relative;
+  box-sizing: border-box;
+  padding: 5px 15px 5px 115px;
+
+  &.active {
+    background-color: darken(@color-canvas, 5%)!important;
+  }
+
+  &:after {
+    position: absolute;
+    right: 2px;
+    bottom: 0;
+    left: 2px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+  }
+
+  &:last-child:after, &:last-child:before {
+    height: 0;
+  }
+
+
+  .rn-card-center, .rn-card-thumb {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .rn-card-thumb {
+    top: 5px;
+    left: 15px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+
+    img {
+      border: none;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .rn-card, .rn-card-thumb, .rn-card-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  .rn-card-content {
+    width: 100%;
+    padding-top: 10px;
+  }
+  .rn-card-title, .rn-card-desc {
+    line-height: 20px;
+    word-break: break-all;
+  }
+
+  .rn-card-num {
+    color: #666;
+    font-size: @font-size-small;
+  }
+
+  .rn-card-title {
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .rn-card-price, .rn-card-num {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 80px;
+    line-height: 20px;
+    text-align: right;
+  }
+
+  .rn-card-price {
+    font-size: .75rem;
+    color: @color-primary;
+    font-weight: 600;
+  }
+
+  .rn-card-title, .rn-card-desc {
+    line-height: 20px;
+    word-break: break-all;
+  }
+
+  .rn-card-desc {
+    color: @color-gray;
+    font-size: @font-size-small;
+    max-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .rn-card-footer {
+    right: 15px;
+    bottom: 20px;
+    position: absolute;
+  }
+
+}
+
+// 纵向卡片布局
+.rn-card-vertical {
+  background-color: #fff;
+  position: relative;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+
+  .rn-card-header {
+    padding: 16px;
+    font-weight: 500;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .rn-card-media {
+    position: relative;
+
+    .rn-card-media-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 16px;
+      background-color: rgba(0,0,0,.54);
+
+      .rn-card-title {
+        font-size: 24px;
+        color: hsla(0,0%,100%,.87);
+        line-height: 36px;
+      }
+
+      .rn-card-media-title .rn-card-sub-title {
+        color: hsla(0,0%,100%,.54);
+        font-size: 14px;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      content: '';
+      -webkit-transform: scaleY(.5);
+      transform: scaleY(.5);
+      background-color: #c8c7cc;
+    }
+  }
+
+  .rn-card-media>img {
+    width: 100%;
+    max-width: 100%;
+    height: 100px;
+    min-width: 100%;
+    display: block;
+    vertical-align: top;
+  }
+
+
+  .rn-card-text {
+    padding: 5px;
+    font-size: 14px;
+    color: rgba(0,0,0,.87);
+  }
+
+
+}
+
+

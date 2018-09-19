@@ -1,0 +1,6 @@
+.color-variant(@color) {
+  background-color: @color!important;
+  border-color: @color!important;
+  color: #fff!important;
+  &.hover:hover, &.click:active, &[type=button]:enabled:active,&[type=submit]:enabled:active {background-color: darken(@color, 20%)!important;}
+}
